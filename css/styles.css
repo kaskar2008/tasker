@@ -1,0 +1,127 @@
+/* BASE */
+html, body {font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; height: 100%;}
+body {margin: 0; padding: 0; background-color: #f7f7f7; line-height: 1;}
+:focus {outline: 0;}
+
+
+/* Mods */
+[top] {top: 0;}
+[left] {left: 0;}
+[right] {right: 0;}
+[bottom] {bottom: 0;}
+[tar] {text-align: right !important;}
+[tac] {text-align: center !important;}
+[tal] {text-align: left !important;}
+[fl-r] {float: right !important;}
+[fl-l] {float: left !important;}
+[d-b] {display: block;}
+[d-ib] {display: inline-block;}
+[d-tb] {display: table;}
+[d-tbc] {display: table-cell;}
+[w100] {width: 100%;}
+[va-t] {vertical-align: top;}
+[va-m] {vertical-align: middle;}
+[va-b] {vertical-align: bottom;}
+[middle] {margin-left: auto; margin-right: auto;}
+[z0] {z-index: 0;} [z1] {z-index: 1;} [z2] {z-index: 2;} [z3] {z-index: 3;} [z4] {z-index: 4;}
+[z5] {z-index: 5;} [z6] {z-index: 6;} [z7] {z-index: 7;} [z8] {z-index: 8;} [z9] {z-index: 9;}
+[sticky] {position: fixed !important;}
+[hide] {display: none !important;}
+[show] {display: block !important;}
+[big] {font-size: 16pt;}
+[small] {font-size: 8pt;}
+[medium] {font-size: 12pt;}
+[huge] {font-size: 20pt;}
+
+
+/* Params */
+[shadow] {box-shadow: 0 0 15px rgba(0,0,0,0.5);}
+[dropdown] {padding: 0; margin: 0;}
+[dropdown] li {list-style-type: none; position: relative; display: inline-block;}
+[dropdown] [drop] li {display: block; width: 100%; white-space:nowrap;}
+[dropdown] [drop] {display: none; position: absolute; top: 100%; padding: 0; margin: 0;}
+[dropdown][on-hover] li:hover [drop] {display: block;}
+[dropdown][on-click]:not([show]) [drop] {display: none;}
+[icon] {display: inline-block; padding-right: 5px;}
+[symbol] {display: inline-block; font-size: 7pt;}
+[green] {background-color: #009846;}
+[anchor] {display: block; position: relative; top: -75px; visibility: hidden;}
+[clearfix]:after {content: ""; height: 0; line-height: 0; visibility: hidden; display: block; clear: both;}
+
+
+/* Animation */
+@keyframes hide {
+    0% {
+        opacity: 1;
+        height: auto;
+    }
+    99% {
+    	height: auto;
+    }
+    100% {
+        height: 0;
+        margin: 0;
+        opacity: 0;
+    }
+}
+
+
+/* Parts */
+[top-bar] {}
+[top-bar]>[inner] {display: table; width: 100%; height: 100%;}
+[top-bar]>[inner]>* {display: table-cell; vertical-align: middle;}
+
+[top-bar] [user-block] {color: #fff; width: 20%;}
+[top-bar] [user-block] [username] {padding: 25px; display: block; text-decoration: none; color: #fff; white-space:nowrap; cursor: pointer;}
+[top-bar] [user-block] [username] [symbol] {position: relative; top: -2px;}
+[top-bar] [user-block] [drop] {background-color: #009846; box-sizing: border-box; min-width: 100%;}
+[top-bar] [user-block] [drop] a {text-decoration: none; padding: 10px; display: block; color: #fff;}
+[top-bar] [user-block] [drop] a:hover {background-color: #41a936;}
+
+[top-bar] [logo] {margin-top: 5px; padding-left: 20px;}
+[top-bar] [logo] a {text-decoration: none; color: #fff;}
+[top-bar] [logo] a:hover {text-decoration: underline;}
+
+[tasks] {list-style-type: none; margin: 0; padding: 0;}
+[tasks] [task] {margin: 0; padding: 0px; display: block; margin-top: 5px; margin-bottom: 5px; position: relative;}
+[tasks] [task][remove] {animation: hide 500ms linear; animation-fill-mode: forwards;}
+[tasks] [task] [state] {position: absolute; top: 9px; left: 10px;}
+[tasks] [task] [state]:checked ~ [inner] {text-decoration: line-through; color: #bbb;}
+[tasks] [task] [inner] {border: 1px solid #ccc; box-shadow: 0 4px 8px -5px #000; cursor: pointer; position: relative;}
+[tasks] [task] [inner] [_name] {padding: 10px; display: block; padding-right: 65px; padding-left: 35px; word-wrap: break-word;}
+[tasks] [task] [inner] [_name]:hover {background-color: #eee;}
+[tasks] [task] [inner] [_name][contenteditable="true"] {background-color: #fff;}
+[tasks] [task] ul {margin: 0 10px; margin-top: 0px;}
+[tasks] [task] [buttons] {position: absolute; top: 4px; right: 5px;}
+[tasks] [task] [buttons] [delete], [tasks] [task] [buttons] [add] {display: table-cell; vertical-align: middle; padding: 6px; box-shadow: 0 0 4px -2px #000; cursor: pointer;}
+[tasks] [task] [buttons] [delete]:hover {background-color: red;}
+[tasks] [task] [buttons] [add]:hover {background-color: green;}
+
+[page] input[type="text"] {display: block; padding: 10px; box-sizing: border-box; width: 100%;}
+[page][filter="done"] [root-task] {display: none;}
+[page][filter="done"] [tasks] [task] [buttons] [add] {display: none;}
+
+[wrapper] {padding-top: 85px; width: 800px; margin: 0 auto;}
+
+form[register], form[login] {width: 250px; margin: 0 auto; display: block;}
+form [btn] {display: inline-block; padding: 5px; border: none; cursor: pointer;}
+form [btn]:hover {box-shadow: 0 0 4px 0px #000;}
+form [btn][btn-primary] {background-color: green; color: #fff;}
+form [btn][btn-link] {background-color: blue; color: #fff; text-decoration: none;}
+form [form-group] {display: block; margin-bottom: 10px;}
+form [form-group] [control-label] {display: block; margin-bottom: 3px;}
+form [form-group] [form-control] {display: block; box-sizing: border-box; padding: 5px; width: 100%;}
+form [form-group][has-error] [form-control] {box-shadow: 0 0 4px -2px red;}
+
+
+/* Media */
+@media handheld and (orientation:landscape) {
+	[wrapper] {padding: 85px 15px 10px 15px; width: 100%; margin: 0 auto; box-sizing: border-box;}
+}
+
+@media (max-width: 840px) {
+	[wrapper] {padding: 85px 15px 10px 15px; width: 100%; margin: 0 auto; box-sizing: border-box;}
+}
+
+
+/* Classes */
